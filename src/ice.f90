@@ -56,10 +56,11 @@ program ice
   linear_drag    = .false.
   linear_viscous = .false. ! linear viscous instead of viscous-plastic
   constant_wind  = .true. ! T: 10m/s, F: spat and temp varying winds
+  uwind          = 10d0   ! uwind velocity for constant_wind
   rep_closure    = .true. ! replacement closure (see Kreysher et al. 2000)
   restart        = .false.
   regularization = 'tanh' ! tanh, Kreyscher, capping (Hibler)
-  adv_scheme     = 'semilag' ! upwind, upwindRK2, semilag
+  adv_scheme     = 'upwind' ! upwind, upwindRK2, semilag
   oceanSIM       = .false. ! for shallow water model
   implicitDrag   = .true. ! for uwater mom eq.
   Asselin        = .true. ! Asselin filter for uw and etaw
@@ -141,7 +142,7 @@ program ice
   elseif  ( nx .eq. 400 ) then
      Deltax   =  5d03            
   else
-     print *,  'Wrong grid size dimenion', nx
+     print *,  'Wrong grid size dimension', nx
      STOP
   endif
 

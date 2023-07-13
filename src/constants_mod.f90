@@ -20,7 +20,7 @@ END MODULE properties
 MODULE forcing
 
   IMPLICIT NONE
-  DOUBLE PRECISION :: Cda, Cdw, small1
+  DOUBLE PRECISION :: Cda, Cdw, small1, uwind
 
 END MODULE forcing
 
